@@ -8,7 +8,7 @@ import pages.android.FantasyFootballPage;
 import pages.android.OnboardingPage;
 import utils.Util;
 
-public class FantasyFotballTest extends BaseTest {
+public class FantasyFootballTest extends BaseTest {
     Util util;
     OnboardingPage onboarding;
     FantasyFootballPage fantasyFootball;
@@ -22,7 +22,7 @@ public class FantasyFotballTest extends BaseTest {
 
     @Test(description = "onboarding")
     public void onboarding() {
-        util.fluentWait(OnboardingPage.skipButton,10,1);
+        util.fluentWait(OnboardingPage.skipButton,100000,1);
         onboarding.clickSkipButton();
         onboarding.clickPlayasguestButton();
         onboarding.clickTapheretoskipButton();
@@ -34,13 +34,13 @@ public class FantasyFotballTest extends BaseTest {
         fantasyFootball.clickSigninWithGoogle();
         util.fluentWait(FantasyFootballPage.chooseAccount,10,1);
         fantasyFootball.clickChooseAccount();
-        util.fluentWait(FantasyFootballPage.startPlaying,10,1);
+        util.fluentWait(FantasyFootballPage.startPlaying,10000,1);
         fantasyFootball.clickStartPlaying();
     }
 
     @Test(description = "Click on football icon and perform ")
     public void clickOnFootball() {
-        util.fluentWait(FantasyFootballPage.footballIcon,15000,1);
+        util.fluentWait(FantasyFootballPage.footballIcon,1500,1);
         fantasyFootball.clickFootballIcon();
         fantasyFootball.clickMyMachesIcon();
         fantasyFootball.clickLeaderBoardIcon();
@@ -48,9 +48,10 @@ public class FantasyFotballTest extends BaseTest {
 
     @Test(description = "Leaderboard actions")
     public void leaderboardActions() {
-        util.fluentWait(FantasyFootballPage.pastWeek,10,1);
+        util.fluentWait(FantasyFootballPage.pastWeek,10000,1);
         fantasyFootball.clickPastWeek();
         util.scroll("up", 5);
+        fantasyFootball.clickScrollToTop();
         util.fluentWait(FantasyFootballPage.nextWeek,10,1);
         for (int i = 0; i < 2; i++) {
             fantasyFootball.clickNextWeek();
