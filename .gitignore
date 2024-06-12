@@ -11,3 +11,5 @@ target/
 *.iws
 *.iml
 *.ipr
+testng.xml
+src/main/java/config/config.properties
