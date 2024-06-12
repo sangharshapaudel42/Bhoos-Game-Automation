@@ -64,7 +64,7 @@ public class Util extends BasePage {
 
     }
 
-    //explicit wait
+    //fluent wait
     public WebElement fluentWait(By locator, int timeout, int pollingTime) {
         FluentWait<AppiumDriver> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofMillis(timeout))
