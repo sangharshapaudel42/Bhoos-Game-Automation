@@ -15,8 +15,8 @@ public class BasePage{
 
     //Get text using locator
     public String getText(By locator) {
-        driver.findElement(locator).getText();
-        return driver.findElement(locator).getAttribute("value");
+        WebElement element =  driver.findElement(locator);
+        return element.getText();
     }
 
     //Click using locator
