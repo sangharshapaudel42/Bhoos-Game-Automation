@@ -13,6 +13,8 @@
                     <include name="verifySignInWithGoogle"/>
                     <include name="clickOnFootball"/>
                     <include name="leaderboardActions"/>
+                    <include name="stayTuneText"/>
+                    <include name="exitApp"/>
                 </methods>
             </class>
         </classes>

@@ -74,7 +74,7 @@ public class Util extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    //Scroll to bottom or top and time of scroll
+    //Scroll up or down with times of scroll
     public void scroll(String direction, int times) {
         if (times <= 0) {
             throw new IllegalArgumentException("The number of times to scroll must be greater than zero");
@@ -100,8 +100,10 @@ public class Util extends BasePage {
             Sequence scroll = new Sequence(finger, 1)
                     .addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY))
                     .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+                    .addAction(new Pause(finger, Duration.ofMillis(150)))
                     .addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), startX, endY))
                     .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        System.out.println("scroll called");
         }
     }
 }
