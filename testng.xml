@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AppiumTestSuite">
+    <test name="Internship.android">
+        <classes>
+            <!--            <class name="tests.android.BlackJackSingleplayerTest">-->
+            <!--                <methods>-->
+            <!--                    <include name="onboardingSetup"/>-->
+            <!--                </methods>-->
+            <!--            </class>-->
+            <class name="tests.android.FantasyFootballTest">
+                <methods>
+                    <include name="onboarding"/>
+                    <include name="verifySignInWithGoogle"/>
+                    <include name="clickOnFootball"/>
+                    <include name="leaderboardActions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
