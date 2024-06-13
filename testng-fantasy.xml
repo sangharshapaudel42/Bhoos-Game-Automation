@@ -3,16 +3,10 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/bhoos/Final_Demo">
         <classes>
-            <class name="tests.android.BlackJackSingleplayerTest">
-                <methods>
-                    <include name="onboarding"/>
-                    <include name="startPlayingAndCompletePlaying"/>
-                </methods>
-            </class>
-            <class name="tests.android.FantasyPageTest">
+            <class name="tests.android.FantasyCricketPageTest">
                 <methods>
                     <include name="setWelcomeScreen"/>
-                    <include name="verifyActionForFantasyPage"/>
+                    <include name="ActionForCricketFantasyPage"/>
                 </methods>
             </class>
             <class name="tests.android.JutPattiSinglePlayerGamePageTest">
