@@ -1,36 +1,43 @@
 package tests.android;
 
 import appiumtests.BaseTest;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import pages.android.FantasyPage;
 import pages.android.WelcomePage;
+import utils.Util;
+
+import java.util.concurrent.TimeUnit;
 
 public class FantasyPageTest extends BaseTest {
     WelcomePage welcome;
     FantasyPage fantasy;
+    Util util;
 
     @BeforeClass
     public void setUpJutPattiSinglePlayer() {
         welcome = new WelcomePage(driver);
         fantasy = new FantasyPage(driver);
+        util= new Util(driver);
     }
 
     @Test
     public void setWelcomeScreen() throws InterruptedException {
-
+        Thread.sleep(1000);
         welcome.clickSkipButton();
         Thread.sleep(1000);
         welcome.clickPlayAsGuest();
         Thread.sleep(1000);
         welcome.clickTapHereToSkip();
-        Thread.sleep(1000);
     }
 
     @Test
-    public void verifyActionForFantasyPage() throws InterruptedException {
-        Thread.sleep(1000);
-//
+    public void ActionForCricketFantasyPage() throws InterruptedException {
+
+        Thread.sleep(3000);
         fantasy.clickFantasyPageIcon();
         Thread.sleep(1000);
         fantasy.clickSignInWithGoogle();
@@ -40,8 +47,14 @@ public class FantasyPageTest extends BaseTest {
         fantasy.clickStartPlayingBtn();
         Thread.sleep(1000);
         fantasy.clickAllowBtn();
-        Thread.sleep(3000);
-        fantasy.clickMyMatches();
+        Thread.sleep(6000);
+        try {
+            fantasy.clickMyMatches();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+//        fantasy.clickMyMatches();
+
         Thread.sleep(1000);
         fantasy.clickJoinAMatchBtn();
         Thread.sleep(1000);

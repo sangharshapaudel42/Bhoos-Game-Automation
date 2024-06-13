@@ -26,7 +26,8 @@ public class FantasyPage extends BasePage {
         super(driver);
     }
 
-    public void clickFantasyPageIcon() throws InterruptedException {
+    public void clickFantasyPageIcon() throws InterruptedException{
+        Thread.sleep(3000);
         click(fantasyIcon);
     }
 
@@ -46,7 +47,8 @@ public class FantasyPage extends BasePage {
         click(allowBtn);
     }
 
-    public void clickMyMatches() {
+    public void clickMyMatches() throws InterruptedException{
+        Thread.sleep(1000);
         click(myMatches);
     }
 
