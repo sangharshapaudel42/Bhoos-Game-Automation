@@ -24,8 +24,8 @@ public class FantasyFootballTest extends BaseTest {
     public void onboarding() {
         util.fluentWait(OnboardingPage.skipButton,100000,1);
         onboarding.clickSkipButton();
-        onboarding.clickPlayasguestButton();
-        onboarding.clickTapheretoskipButton();
+        onboarding.clickPlayAsGuestButton();
+        onboarding.clickTapHereToSkipButton();
     }
 
     @Test(description = "Verify sign in with google")

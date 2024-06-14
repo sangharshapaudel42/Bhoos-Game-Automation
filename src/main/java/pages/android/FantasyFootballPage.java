@@ -16,7 +16,7 @@ public class FantasyFootballPage extends BasePage {
     public static final By allowNotificatonButton = AppiumBy.xpath("//android.widget.Button[@resource-id=\"com.android.permissioncontroller:id/permission_allow_button\"]");
     //fluent wait
     private static final By myMachesIcon = AppiumBy.xpath("//android.view.View[@content-desc=\"My Matches\"]");
-    private static final By leaderBoardicon = AppiumBy.xpath("//android.view.View[@content-desc=\"Leaderboard\"]");
+    private static final By leaderboardIcon = AppiumBy.xpath("//android.view.View[@content-desc=\"Leaderboard\"]");
     public static final By pastWeek = AppiumBy.xpath("//android.view.View[@content-desc=\"pastweek\"]");
     //scroll to bottom
     public static final By scrollToTop = AppiumBy.xpath("//android.webkit.WebView[@text=\"Bhoos Fantasy\"]/android.view.View/android.widget.Button");
@@ -60,7 +60,7 @@ public class FantasyFootballPage extends BasePage {
     }
 
     public void clickLeaderBoardIcon() {
-        click(leaderBoardicon);
+        click(leaderboardIcon);
     }
 
     public void clickPastWeek() {

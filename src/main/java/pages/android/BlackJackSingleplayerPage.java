@@ -9,15 +9,15 @@ public class BlackJackSingleplayerPage extends BasePage {
     private static final By blackjackIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"game-tile-blackjack-test-id\"]/android.widget.ImageView");
     private static final By singleplayerButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Single Player, Level up your skills\"]/android.view.ViewGroup[2]");
     private static final By hamburgerButton = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"in-game-hamburger-id\"]/android.widget.ImageView");
-    private static final By startnewgameButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[116]");
+    private static final By startNewGameButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[116]");
     private static final By maxButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"MAX\"]/android.view.ViewGroup");
     private static final By betbutton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[111]/android.view.ViewGroup/android.widget.ImageView");
     //implicitwait needed or explicit wait unitl play again button
-    private static final By playagainButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"PLAY AGAIN\"]");
-    private static final By changebotsButton = AppiumBy.xpath("//android.widget.TextView[@text=\"Change Bots\"]");
-    private static final By deletebotButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup[3]/android.widget.ImageView");
-    private static final By addbotButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup");
-    private static final By choosebot = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Gabbar\"]");
+    private static final By playAgainButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"PLAY AGAIN\"]");
+    private static final By changeBotsButton = AppiumBy.xpath("//android.widget.TextView[@text=\"Change Bots\"]");
+    private static final By deleteBotButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup[3]/android.widget.ImageView");
+    private static final By addBotButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup");
+    private static final By chooseBotButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Gabbar\"]");
     private static final By startButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Start\"]/android.view.ViewGroup");
     private static final By settingButton = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"settings-test-id\"]");
 
@@ -44,7 +44,7 @@ public class BlackJackSingleplayerPage extends BasePage {
 
     public void clickStartnewgameButton() {
 
-        click(startnewgameButton);
+        click(startNewGameButton);
     }
 
     public void clickMaxButton() {
@@ -59,28 +59,28 @@ public class BlackJackSingleplayerPage extends BasePage {
 
     public void clickPlayAgainButton() {
 
-        click(playagainButton);
+        click(playAgainButton);
     }
 
     public void clickChangebotsButton() {
         clickHamburgerButton();
 
-        click(changebotsButton);
+        click(changeBotsButton);
     }
 
     public void clickDeletebotButton() {
 
-        click(deletebotButton);
+        click(deleteBotButton);
     }
 
     public void clickAddBotButton() {
 
-        click(addbotButton);
+        click(addBotButton);
     }
 
     public void clickChooseBot() {
 
-        click(choosebot);
+        click(chooseBotButton);
     }
 
     public void clickStartButton() {
