@@ -13,3 +13,4 @@ target/
 *.ipr
 src/main/java/config/config.properties
 testng.xml
+testng-fantasy.xml
