@@ -5,7 +5,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
-public class FantasyPage extends BasePage {
+public class FantasyCricketPage extends BasePage {
 
     private static final By fantasyIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"game-tile-fantasy-test-id\"]/android.widget.ImageView");
     private static final By signInWithGoogle = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Sign in with Google\"]/android.view.ViewGroup[2]/android.view.ViewGroup");
@@ -19,15 +19,17 @@ public class FantasyPage extends BasePage {
     private static final By currentWeekRightArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]/android.widget.Image");
     private static final By nextWeekRightArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]/android.widget.Image");
     private static final By crossSymbol = AppiumBy.xpath("//android.widget.Button[@text=\"svg%3e\"]");
+    private static final By exitAppText= AppiumBy.xpath("//android.widget.TextView[@text=\"Are you sure you want to exit? Exiting will take you back to Bhoos Games app.\"]");
     private static final By yesExitBtn = AppiumBy.xpath("//android.widget.Button[@text=\"YES, EXIT\"]");
 
 
-    public FantasyPage(AppiumDriver driver) {
+
+    public FantasyCricketPage(AppiumDriver driver){
         super(driver);
     }
 
     public void clickFantasyPageIcon() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         click(fantasyIcon);
     }
 
@@ -75,8 +77,11 @@ public class FantasyPage extends BasePage {
     public void clickCrossSymbol() {
         click(crossSymbol);
     }
+    public String verifyExitAppTest(){
+        return getText(exitAppText);
+    }
 
-    public void clickYesExitBtn() {
+    public void clickYesExitBtn(){
         click(yesExitBtn);
     }
 }
