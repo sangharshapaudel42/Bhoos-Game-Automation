@@ -26,6 +26,7 @@ public class FantasyFootballTest extends BaseTest {
         onboarding.clickSkipButton();
         onboarding.clickPlayAsGuestButton();
         onboarding.clickTapHereToSkipButton();
+
     }
 
     @Test(description = "Verify sign in with google")
@@ -36,7 +37,7 @@ public class FantasyFootballTest extends BaseTest {
         fantasyFootball.clickChooseAccount();
         util.fluentWait(FantasyFootballPage.startPlaying,10000,1);
         fantasyFootball.clickStartPlaying();
-        util.fluentWait(FantasyFootballPage.allowNotificatonButton,1000,1);
+        //util.fluentWait(FantasyFootballPage.allowNotificatonButton,1000,1);
         fantasyFootball.clickAllowNotificatonbutton();
     }
 
@@ -52,9 +53,9 @@ public class FantasyFootballTest extends BaseTest {
     public void leaderboardActions() {
         util.fluentWait(FantasyFootballPage.pastWeek,10000,1);
         fantasyFootball.clickPastWeek();
-//        util.scroll("up", 5);
-//        util.fluentWait(FantasyFootballPage.scrollToTop,10000,1);
-//        fantasyFootball.clickScrollToTop();
+        util.scroll("down", 5);
+        util.fluentWait(FantasyFootballPage.scrollToTop,10000,1);
+        fantasyFootball.clickScrollToTop();
         util.fluentWait(FantasyFootballPage.nextWeek,10,1);
         for (int i = 0; i < 2; i++) {
             fantasyFootball.clickNextWeek();

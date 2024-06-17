@@ -64,7 +64,7 @@ public class Util extends BasePage {
 
     }
 
-    //fluent wait
+    //fluent wait until visibility of element
     public WebElement fluentWait(By locator, int timeout, int pollingTime) {
         FluentWait<AppiumDriver> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofMillis(timeout))
@@ -77,11 +77,11 @@ public class Util extends BasePage {
     //Scroll up or down with times of scroll
     public void scroll(String direction, int times) {
         if (times <= 0) {
-            throw new IllegalArgumentException("The number of times to scroll must be greater than zero");
+            throw new IllegalArgumentException("The number of times to scroll must be greater than zero.");
         }
 
         Dimension dimension = driver.manage().window().getSize();
-        int startX = (int) (dimension.width * 0.5);
+        int startX = dimension.width / 2;
         int startY, endY;
 
         if ("down".equalsIgnoreCase(direction)) {
@@ -91,21 +91,22 @@ public class Util extends BasePage {
             startY = (int) (dimension.height * 0.2);
             endY = (int) (dimension.height * 0.8);
         } else {
-            throw new IllegalArgumentException("Invalid direction: " + direction + " Use 'up' or 'down'");
+            throw new IllegalArgumentException("Invalid direction: " + direction + ". Use 'up' or 'down'.");
         }
 
-        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 
         for (int i = 0; i < times; i++) {
             Sequence scroll = new Sequence(finger, 1)
                     .addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY))
                     .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
-                    .addAction(new Pause(finger, Duration.ofMillis(150)))
                     .addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), startX, endY))
                     .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        System.out.println("scroll called");
+
+            driver.perform(Collections.singletonList(scroll));
         }
     }
+
 }
 
 
