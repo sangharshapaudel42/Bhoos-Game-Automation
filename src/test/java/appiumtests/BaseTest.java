@@ -73,7 +73,7 @@ public class BaseTest {
     }
 
     @AfterClass(description = "Quiting Driver")
-    public void quiteDriver() {
+    public void quitDriver() {
         if (driver != null) {
             driver.quit();
             System.out.println("Driver quit");

@@ -17,9 +17,4 @@ public class JhyapSingleplayerPage extends BasePage {
     }
 
 
-
-
-
-
-
 }

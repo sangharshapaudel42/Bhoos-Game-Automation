@@ -12,21 +12,26 @@ public class KittiSinglePlayerGamePage extends BasePage {
     private static final By kittiSHamBurgerIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"in-game-hamburger-id\"]/android.widget.ImageView");
     private static final By saveAndQuit = AppiumBy.xpath("//android.view.ViewGroup[@resource-id='save-and-quit-test-id']");
 
-    public KittiSinglePlayerGamePage(AppiumDriver driver){
+    public KittiSinglePlayerGamePage(AppiumDriver driver) {
         super(driver);
     }
+
     public void clickKittiIcon() throws InterruptedException {
         click(kittiIcon);
     }
+
     public void clickKittiSinglePlayerIcon() throws InterruptedException {
         click(kittiSinglePlayerIcon);
     }
+
     public void clickShowIcon() throws InterruptedException {
         click(showIcon);
     }
+
     public void clickKittiHamBurgerIcon() throws InterruptedException {
         click(kittiSHamBurgerIcon);
     }
+
     public void clickSaveAndQuitIcon() throws InterruptedException {
         click(saveAndQuit);
     }

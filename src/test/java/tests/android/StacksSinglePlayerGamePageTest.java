@@ -11,13 +11,13 @@ public class StacksSinglePlayerGamePageTest extends BaseTest {
     StacksSinglePlayerGamePage stacks;
 
     @BeforeClass
-    public void setUpStacksSinglePlayer(){
+    public void setUpStacksSinglePlayer() {
         welcome = new WelcomePage(driver);
         stacks = new StacksSinglePlayerGamePage(driver);
     }
 
     @Test
-    public void setWelcomeScreen() throws InterruptedException{
+    public void setWelcomeScreen() throws InterruptedException {
 
         welcome.clickSkipButton();
         Thread.sleep(1000);
@@ -26,6 +26,7 @@ public class StacksSinglePlayerGamePageTest extends BaseTest {
         welcome.clickTapHereToSkip();
         Thread.sleep(1000);
     }
+
     @Test
     public void verifyActionForStacksSinglePlayerGame() throws InterruptedException {
         Thread.sleep(2000);

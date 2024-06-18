@@ -19,7 +19,7 @@ public class OnboardingTest extends BaseTest {
 
     @Test(description = "onboarding setup")
     public void onboardingSetup() throws InterruptedException {
-        util.fluentWait(OnboardingPage.skipButton,10,1);
+        util.fluentWait(OnboardingPage.skipButton, 10, 1);
         onboarding.clickSkipButton();
         onboarding.clickPlayAsGuestButton();
         onboarding.clickTapHereToSkipButton();
