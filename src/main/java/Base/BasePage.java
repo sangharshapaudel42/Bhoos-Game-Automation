@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class BasePage{
+public class BasePage {
     protected final AppiumDriver driver;
 
     public BasePage(AppiumDriver driver) {
@@ -15,7 +15,7 @@ public class BasePage{
 
     //Get text using locator
     public String getText(By locator) {
-        WebElement element =  driver.findElement(locator);
+        WebElement element = driver.findElement(locator);
         return element.getText();
     }
 

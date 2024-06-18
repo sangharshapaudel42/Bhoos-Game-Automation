@@ -4,10 +4,6 @@ import Base.BasePage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import java.time.Duration;
-
-import java.time.Duration;
 
 public class JutPattiSinglePlayerGamePage extends BasePage {
     private static final By jutPattiIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"game-tile-jutpatti-test-id\"]/android.widget.ImageView");
@@ -16,19 +12,23 @@ public class JutPattiSinglePlayerGamePage extends BasePage {
     private static final By hamBurgerIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"in-game-hamburger-id\"]/android.widget.ImageView");
     private static final By settingsIcon = AppiumBy.xpath("//*[contains(@content-desc, 'Settings')]");
 
-    public JutPattiSinglePlayerGamePage(AppiumDriver driver){
+    public JutPattiSinglePlayerGamePage(AppiumDriver driver) {
         super(driver);
     }
+
     public void clickJutPattiIcon() throws InterruptedException {
         click(jutPattiIcon);
     }
+
     public void clickSinglePlayerIcon() throws InterruptedException {
         click(singlePlayerIcon);
     }
+
     public void clickArrangeIcon() throws InterruptedException {
 //        waitForElementToBeClickable(arrangeIcon, Duration.ofSeconds(10));
         click(arrangeIcon);
     }
+
     public void clickHamBurgerIcon() throws InterruptedException {
 //        waitForElementToBeClickable(hamBurgerIcon, Duration.ofSeconds(10));
         click(hamBurgerIcon);

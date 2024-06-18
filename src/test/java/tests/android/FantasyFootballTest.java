@@ -22,7 +22,6 @@ public class FantasyFootballTest extends BaseTest {
 
     @Test(description = "onboarding")
     public void onboarding() {
-        util.fluentWait(OnboardingPage.skipButton,100000,1);
         onboarding.clickSkipButton();
         onboarding.clickPlayAsGuestButton();
         onboarding.clickTapHereToSkipButton();
@@ -33,17 +32,13 @@ public class FantasyFootballTest extends BaseTest {
     public void verifySignInWithGoogle() {
         fantasyFootball.clickFantasyIcon();
         fantasyFootball.clickSigninWithGoogle();
-        util.fluentWait(FantasyFootballPage.chooseAccount,10,1);
         fantasyFootball.clickChooseAccount();
-        util.fluentWait(FantasyFootballPage.startPlaying,10000,1);
         fantasyFootball.clickStartPlaying();
-        //util.fluentWait(FantasyFootballPage.allowNotificatonButton,1000,1);
         fantasyFootball.clickAllowNotificatonbutton();
     }
 
     @Test(description = "Click on football icon and perform ")
     public void clickOnFootball() {
-        util.fluentWait(FantasyFootballPage.footballIcon,20000,1);
         fantasyFootball.clickFootballIcon();
         fantasyFootball.clickMyMachesIcon();
         fantasyFootball.clickLeaderBoardIcon();
@@ -51,12 +46,9 @@ public class FantasyFootballTest extends BaseTest {
 
     @Test(description = "Leaderboard actions")
     public void leaderboardActions() {
-        util.fluentWait(FantasyFootballPage.pastWeek,10000,1);
         fantasyFootball.clickPastWeek();
         util.scroll("down", 5);
-        util.fluentWait(FantasyFootballPage.scrollToTop,10000,1);
         fantasyFootball.clickScrollToTop();
-        util.fluentWait(FantasyFootballPage.nextWeek,10,1);
         for (int i = 0; i < 2; i++) {
             fantasyFootball.clickNextWeek();
         }
@@ -65,24 +57,21 @@ public class FantasyFootballTest extends BaseTest {
 
 
     @Test(description = "Assertion check of last page text")
-    public void stayTuneText(){
+    public void stayTuneText() {
         try {
-            Assert.assertEquals(fantasyFootball.getStayTunedText(),"Stay tuned for the next week's leaderboards.");
-        }
-        catch (AssertionError e) {
+            Assert.assertEquals(fantasyFootball.getStayTunedText(), "Stay tuned for the next week's leaderboards.");
+        } catch (AssertionError e) {
             throw e;
         }
 
     }
 
 
-
     @Test(description = "Exit app")
-    public void exitApp(){
+    public void exitApp() {
         fantasyFootball.clickExitButton();
         fantasyFootball.clickYesExitButton();
     }
-
 
 
 }

@@ -11,13 +11,13 @@ public class JutPattiSinglePlayerGamePageTest extends BaseTest {
     JutPattiSinglePlayerGamePage jutpatti;
 
     @BeforeClass
-    public void setUpJutPattiSinglePlayer(){
+    public void setUpJutPattiSinglePlayer() {
         welcome = new WelcomePage(driver);
         jutpatti = new JutPattiSinglePlayerGamePage(driver);
     }
 
     @Test
-    public void setWelcomeScreen() throws InterruptedException{
+    public void setWelcomeScreen() throws InterruptedException {
 
         welcome.clickSkipButton();
         Thread.sleep(1000);
@@ -26,6 +26,7 @@ public class JutPattiSinglePlayerGamePageTest extends BaseTest {
         welcome.clickTapHereToSkip();
         Thread.sleep(1000);
     }
+
     @Test
     public void verifyActionForJutPattiSinglePlayerGame() throws InterruptedException {
         Thread.sleep(2000);

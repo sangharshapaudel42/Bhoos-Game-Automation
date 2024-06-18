@@ -22,7 +22,7 @@ public class BlackJackSingleplayerTest extends BaseTest {
 
     @Test(description = "onboarding")
     public void onboarding() {
-        util.fluentWait(OnboardingPage.skipButton,10,1);
+        util.fluentWait(OnboardingPage.skipButton, 10, 1);
         onboarding.clickSkipButton();
         onboarding.clickPlayAsGuestButton();
         onboarding.clickTapHereToSkipButton();

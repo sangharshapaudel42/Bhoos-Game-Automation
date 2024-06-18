@@ -14,11 +14,12 @@ public class WelcomePageTest extends BasePage {
     }
 
     @BeforeClass
-    public void setWelcomePage(){
+    public void setWelcomePage() {
         welcome = new WelcomePage(driver);
     }
+
     @Test
-    public void verifyActionForWelcomePage() throws InterruptedException{
+    public void verifyActionForWelcomePage() throws InterruptedException {
         Thread.sleep(1000);
         welcome.clickSkipButton();
         Thread.sleep(2000);

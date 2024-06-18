@@ -16,54 +16,65 @@ public class FantasyPage extends BasePage {
     private static final By joinAMatchBtn = AppiumBy.xpath("//android.widget.Button[@text=\"JOIN A MATCH\"]");
     private static final By leaderBoard = AppiumBy.xpath("//android.view.View[@content-desc=\"Leaderboard\"]/android.view.View");
     private static final By pastWeekLeftArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"pastweek\"]/android.widget.Image");
-    private static final By currentWeekRightArrow= AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]/android.widget.Image");
+    private static final By currentWeekRightArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]/android.widget.Image");
     private static final By nextWeekRightArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]/android.widget.Image");
     private static final By crossSymbol = AppiumBy.xpath("//android.widget.Button[@text=\"svg%3e\"]");
     private static final By yesExitBtn = AppiumBy.xpath("//android.widget.Button[@text=\"YES, EXIT\"]");
 
 
-
-    public FantasyPage(AppiumDriver driver){
+    public FantasyPage(AppiumDriver driver) {
         super(driver);
     }
 
-    public void clickFantasyPageIcon() throws InterruptedException{
+    public void clickFantasyPageIcon() throws InterruptedException {
         click(fantasyIcon);
     }
-    public void clickSignInWithGoogle(){
+
+    public void clickSignInWithGoogle() {
         click(signInWithGoogle);
     }
-    public void clickChooseAnAccount(){
+
+    public void clickChooseAnAccount() {
         click(chooseAnAccount);
     }
-    public void clickStartPlayingBtn(){
+
+    public void clickStartPlayingBtn() {
         click(startPlayingBtn);
     }
-    public void clickAllowBtn(){
+
+    public void clickAllowBtn() {
         click(allowBtn);
     }
-    public void clickMyMatches(){
+
+    public void clickMyMatches() {
         click(myMatches);
     }
-    public void clickJoinAMatchBtn(){
+
+    public void clickJoinAMatchBtn() {
         click(joinAMatchBtn);
     }
-    public void clickLeaderBoard(){
+
+    public void clickLeaderBoard() {
         click(leaderBoard);
     }
-    public void clickPastWeekLeftArrow(){
+
+    public void clickPastWeekLeftArrow() {
         click(pastWeekLeftArrow);
     }
-    public void clickCurrentWeekRightArrow(){
+
+    public void clickCurrentWeekRightArrow() {
         click(currentWeekRightArrow);
     }
-    public void clickNextWeekRightArrow(){
+
+    public void clickNextWeekRightArrow() {
         click(nextWeekRightArrow);
     }
-    public void clickCrossSymbol(){
+
+    public void clickCrossSymbol() {
         click(crossSymbol);
     }
-    public void clickYesExitBtn(){
+
+    public void clickYesExitBtn() {
         click(yesExitBtn);
     }
 }

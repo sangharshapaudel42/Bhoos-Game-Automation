@@ -11,7 +11,7 @@ public class StacksSinglePlayerGamePage extends BasePage {
     private static final By stacksHamBurgerIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"in-game-hamburger-id\"]/android.widget.ImageView");
     private static final By saveAndQuit = AppiumBy.xpath("//android.view.ViewGroup[@resource-id='save-and-quit-test-id']");
 
-    public StacksSinglePlayerGamePage(AppiumDriver driver){
+    public StacksSinglePlayerGamePage(AppiumDriver driver) {
         super(driver);
     }
 
@@ -26,6 +26,7 @@ public class StacksSinglePlayerGamePage extends BasePage {
     public void clickStacksHamBurgerIcon() throws InterruptedException {
         click(stacksHamBurgerIcon);
     }
+
     public void clickSaveAndQuit() {
         click(saveAndQuit);
     }

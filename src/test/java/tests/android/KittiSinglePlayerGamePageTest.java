@@ -11,13 +11,13 @@ public class KittiSinglePlayerGamePageTest extends BaseTest {
     KittiSinglePlayerGamePage kitti;
 
     @BeforeClass
-    public void setUpKittiSinglePlayer(){
+    public void setUpKittiSinglePlayer() {
         welcome = new WelcomePage(driver);
         kitti = new KittiSinglePlayerGamePage(driver);
     }
 
     @Test
-    public void setWelcomeScreen() throws InterruptedException{
+    public void setWelcomeScreen() throws InterruptedException {
 
         welcome.clickSkipButton();
         Thread.sleep(1000);
@@ -26,6 +26,7 @@ public class KittiSinglePlayerGamePageTest extends BaseTest {
         welcome.clickTapHereToSkip();
         Thread.sleep(1000);
     }
+
     @Test
     public void verifyActionForKittiSinglePlayerGame() throws InterruptedException {
         Thread.sleep(2000);
