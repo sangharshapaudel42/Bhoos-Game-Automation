@@ -31,7 +31,11 @@
                 <include name="setWelcomeScreen"/>
                 <include name="fantasyIconAndSignInWithGoogle"/>
                 <include name="myMatchesAction"/>
+                <include name="myMatchesText1"/>
+                <include name="myMatchesText2"/>
                 <include name="leaderboardAction"/>
+                <include name="leaderboardText1"/>
+                <include name="leaderboardText2"/>
                 <include name="exitAppAction"/>
             </methods>
         </class>
