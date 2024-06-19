@@ -125,7 +125,11 @@ public class FantasyCricketPageTest extends BaseTest {
         Thread.sleep(2000);
         try {
             Assert.assertEquals(fantasy.getExitAppText(),"Are you sure you want to exit?Exiting will take you back to Bhoos Games app.");
-        } finally {
+        }
+        catch (AssertionError e){
+            throw e;
+        }
+        finally {
             Thread.sleep(1000);
             fantasy.clickYesExitBtn();
             Thread.sleep(3000);
