@@ -64,15 +64,7 @@ public class Util extends BasePage {
 
     }
 
-    //fluent wait until visibility of element
-    public WebElement fluentWait(By locator, int timeout, int pollingTime) {
-        FluentWait<AppiumDriver> wait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofMillis(timeout))
-                .pollingEvery(Duration.ofMillis(pollingTime))
-                .ignoring(NoSuchElementException.class);
 
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
 
     //Scroll up or down with times of scroll
     public void scroll(String direction, int times) {
@@ -105,6 +97,14 @@ public class Util extends BasePage {
 
             driver.perform(Collections.singletonList(scroll));
         }
+    }
+
+    //for loop method for clicking on element
+    public void clickMultipleTimes( By locator, int times) {
+        for (int i = 0; i < times; i++) {
+            WebElement element = driver.findElement(locator);
+            element.click();
+            }
     }
 
 }

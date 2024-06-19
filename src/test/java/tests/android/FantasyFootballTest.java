@@ -49,10 +49,7 @@ public class FantasyFootballTest extends BaseTest {
         fantasyFootball.clickPastWeek();
         util.scroll("down", 5);
         fantasyFootball.clickScrollToTop();
-        for (int i = 0; i < 2; i++) {
-            fantasyFootball.clickNextWeek();
-        }
-
+        fantasyFootball.clickNextWeek();
     }
 
 

@@ -2,7 +2,12 @@ package Base;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+
+import java.time.Duration;
 
 public class BasePage {
     protected final AppiumDriver driver;
@@ -35,5 +40,14 @@ public class BasePage {
         driver.findElement(locator).clear();
     }
 
+    //fluent wait until visibility of element
+    public WebElement fluentWait(By locator, int timeout, int pollingTime) {
+        FluentWait<AppiumDriver> wait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofMillis(timeout))
+                .pollingEvery(Duration.ofMillis(pollingTime))
+                .ignoring(NoSuchElementException.class);
+//        System.out.println("fluent wait");
 
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 }

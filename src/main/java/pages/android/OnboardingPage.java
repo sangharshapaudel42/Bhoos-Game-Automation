@@ -4,13 +4,14 @@ import Base.BasePage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeClass;
 import utils.Util;
 
 public class OnboardingPage extends BasePage {
     private static final By skipButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Skip\"]");
     private static final By playAsGuestButton = AppiumBy.xpath("//android.widget.TextView[@text=\"Play as Guest\"]");
     private static final By tapHereToSkipButton = AppiumBy.xpath("//android.widget.TextView[@text=\"Tap here to skip\"]");
-    Util util;
+    private final Util util = new Util(driver);
 
 
     public OnboardingPage(AppiumDriver driver) {
@@ -20,7 +21,7 @@ public class OnboardingPage extends BasePage {
 
     public void clickSkipButton() {
 
-        util.fluentWait(OnboardingPage.skipButton, 100000, 1);
+        util.fluentWait(OnboardingPage.skipButton, 10000, 1);
 
         click(skipButton);
     }

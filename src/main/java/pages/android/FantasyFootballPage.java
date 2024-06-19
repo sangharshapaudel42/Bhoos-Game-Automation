@@ -4,6 +4,7 @@ import Base.BasePage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeClass;
 import utils.Util;
 
 public class FantasyFootballPage extends BasePage {
@@ -27,7 +28,8 @@ public class FantasyFootballPage extends BasePage {
     //assertion
     private static final By exitButton = AppiumBy.xpath("//android.widget.Button[@text=\"svg%3e\"]");
     private static final By yesExitButton = AppiumBy.xpath("//android.widget.Button[@text=\"YES, EXIT\"]");
-    Util util;
+
+    private final Util util = new Util(driver);
 
     public FantasyFootballPage(AppiumDriver driver) {
         super(driver);
@@ -43,23 +45,23 @@ public class FantasyFootballPage extends BasePage {
 
 
     public void clickChooseAccount() {
-        util.fluentWait(FantasyFootballPage.chooseAccount, 10, 1);
+        fluentWait(FantasyFootballPage.chooseAccount, 10, 1);
         click(chooseAccount);
     }
 
     public void clickStartPlaying() {
-        util.fluentWait(FantasyFootballPage.startPlaying, 10000, 1);
+        fluentWait(FantasyFootballPage.startPlaying, 10000, 1);
         click(startPlaying);
     }
 
     public void clickAllowNotificatonbutton() {
-        util.fluentWait(FantasyFootballPage.allowNotificatonButton, 1000, 1);
+        fluentWait(FantasyFootballPage.allowNotificatonButton, 1000, 1);
 
         click(allowNotificatonButton);
     }
 
     public void clickFootballIcon() {
-        util.fluentWait(FantasyFootballPage.footballIcon, 2000000, 1);
+        fluentWait(FantasyFootballPage.footballIcon, 2000000, 1);
 
         click(footballIcon);
     }
@@ -73,17 +75,17 @@ public class FantasyFootballPage extends BasePage {
     }
 
     public void clickPastWeek() {
-        util.fluentWait(FantasyFootballPage.pastWeek, 10000, 1);
+        fluentWait(FantasyFootballPage.pastWeek, 10000, 1);
         click(pastWeek);
     }
 
     public void clickScrollToTop() {
-        util.fluentWait(FantasyFootballPage.nextWeek, 10, 1);
+        fluentWait(FantasyFootballPage.nextWeek, 10, 1);
         click(scrollToTop);
     }
 
     public void clickNextWeek() {
-        click(nextWeek);
+       util.clickMultipleTimes(FantasyFootballPage.nextWeek, 2);
     }
 
     public String getStayTunedText() {
