@@ -20,16 +20,9 @@ public class FantasyFootballTest extends BaseTest {
         fantasyFootball = new FantasyFootballPage(driver);
     }
 
-    @Test(description = "onboarding")
-    public void onboarding() {
-        onboarding.clickSkipButton();
-        onboarding.clickPlayAsGuestButton();
-        onboarding.clickTapHereToSkipButton();
-
-    }
-
     @Test(description = "Verify sign in with google")
     public void verifySignInWithGoogle() {
+        onboarding.clickTapHereToSkipButton();
         fantasyFootball.clickFantasyIcon();
         fantasyFootball.clickSigninWithGoogle();
         fantasyFootball.clickChooseAccount();
@@ -46,7 +39,25 @@ public class FantasyFootballTest extends BaseTest {
 
     @Test(description = "Leaderboard actions")
     public void leaderboardActions() {
+        try {
+            Assert.assertEquals(fantasyFootball.getCurrentWeekRankingText(), "Weekly leaderboard ranking are final.");
+        } catch (AssertionError e) {
+            throw e;
+        }
+        finally {
+            util.scroll("down", 5);
+        }
+        util.scroll("down", 5);
+        fantasyFootball.clickScrollToTop();
         fantasyFootball.clickPastWeek();
+        try {
+            Assert.assertEquals(fantasyFootball.getPastWeekRankingText(), "Weekly leaderboard ranking are final.");
+        } catch (AssertionError e) {
+            throw e;
+        }
+        finally {
+            util.scroll("down", 5);
+        }
         util.scroll("down", 5);
         fantasyFootball.clickScrollToTop();
         fantasyFootball.clickNextWeek();
@@ -56,9 +67,13 @@ public class FantasyFootballTest extends BaseTest {
     @Test(description = "Assertion check of last page text")
     public void stayTuneText() {
         try {
+            System.out.println(fantasyFootball.getStayTunedText());
             Assert.assertEquals(fantasyFootball.getStayTunedText(), "Stay tuned for the next week's leaderboards.");
         } catch (AssertionError e) {
             throw e;
+        }
+        finally {
+            exitApp();
         }
 
     }
