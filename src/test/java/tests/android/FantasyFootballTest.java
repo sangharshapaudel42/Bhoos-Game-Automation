@@ -26,43 +26,47 @@ public class FantasyFootballTest extends BaseTest {
         fantasyFootball.clickFantasyIcon();
         fantasyFootball.clickSigninWithGoogle();
         fantasyFootball.clickChooseAccount();
+    }
+    @Test(description = "Start playing")
+    public void startPlaying() {
         fantasyFootball.clickStartPlaying();
         fantasyFootball.clickAllowNotificatonbutton();
     }
 
-    @Test(description = "Click on football icon and perform ")
+    @Test(description = "Click on football icon and click on different menu")
     public void clickOnFootball() {
         fantasyFootball.clickFootballIcon();
         fantasyFootball.clickMyMachesIcon();
         fantasyFootball.clickLeaderBoardIcon();
     }
-
-    @Test(description = "Leaderboard actions")
-    public void leaderboardActions() {
+@Test(description = "Click on leaderboard and assert current week ranking text")
+    public void clickOnLeaderboard() {
+        fantasyFootball.clickLeaderBoardIcon();
         try {
             Assert.assertEquals(fantasyFootball.getCurrentWeekRankingText(), "Weekly leaderboard ranking are not final yet.");
         } catch (AssertionError e) {
             throw e;
         }
-        finally {
-            util.scroll("down", 5);
-        }
-        util.scroll("down", 5);
-        fantasyFootball.clickScrollToTop();
+    util.scroll("down", 5);
+    fantasyFootball.clickScrollToTop();
+    }
+
+    @Test(description = "Click on past week and assert past week ranking text")
+    public void clickOnPastWeek() {
         fantasyFootball.clickPastWeek();
         try {
             Assert.assertEquals(fantasyFootball.getPastWeekRankingText(), "Weekly leaderboard rankings are final.");
         } catch (AssertionError e) {
             throw e;
         }
-        finally {
-            util.scroll("down", 5);
-        }
         util.scroll("down", 5);
         fantasyFootball.clickScrollToTop();
-        fantasyFootball.clickNextWeek();
     }
 
+    @Test(description = "Click on next week")
+    public void clickOnNextWeek() {
+        fantasyFootball.clickNextWeek();
+    }
 
     @Test(description = "Assertion check of last page text")
     public void stayTuneText() {
@@ -72,12 +76,8 @@ public class FantasyFootballTest extends BaseTest {
         } catch (AssertionError e) {
             throw e;
         }
-        finally {
-            exitApp();
-        }
 
     }
-
 
     @Test(description = "Exit app")
     public void exitApp() {
