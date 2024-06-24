@@ -84,6 +84,4 @@ public class FantasyFootballTest extends BaseTest {
         fantasyFootball.clickExitButton();
         fantasyFootball.clickYesExitButton();
     }
-
-
 }

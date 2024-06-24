@@ -47,7 +47,7 @@ public class BaseTest {
         //initialize driver
         initializeDriver();
     }
-
+    @Deprecated
     private void initializeDriver() throws MalformedURLException {
         try {
             // driver initialization

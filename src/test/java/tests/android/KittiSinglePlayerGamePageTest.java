@@ -19,9 +19,6 @@ public class KittiSinglePlayerGamePageTest extends BaseTest {
     @Test
     public void setWelcomeScreen() throws InterruptedException {
 
-        welcome.clickSkipButton();
-        Thread.sleep(1000);
-        welcome.clickPlayAsGuest();
         Thread.sleep(1000);
         welcome.clickTapHereToSkip();
         Thread.sleep(1000);
