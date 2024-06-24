@@ -9,10 +9,12 @@
             <!--            </class>-->
             <class name="tests.android.FantasyFootballTest">
                 <methods>
-                    <include name="onboarding"/>
                     <include name="verifySignInWithGoogle"/>
+                    <include name="startPlaying"/>
                     <include name="clickOnFootball"/>
-                    <include name="leaderboardActions"/>
+                    <include name="clickOnLeaderboard"/>
+                    <include name="clickOnPastWeek"/>
+                    <include name="clickOnNextWeek"/>
                     <include name="stayTuneText"/>
                     <include name="exitApp"/>
                 </methods>
