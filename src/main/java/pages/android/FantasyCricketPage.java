@@ -64,15 +64,15 @@ public class FantasyCricketPage extends BasePage {
         return getText(myMatchesText1);
     }
 
-    public String getMyMatchesText2(){
-        return getText(myMatchesText2);
-    }
+//    public String getMyMatchesText2(){
+//        return getText(myMatchesText2);
+//    }
 
     public void clickJoinAMatchBtn(){
         click(joinAMatchBtn);
     }
-
-    public void clickLeaderBoard() {
+    public void clickLeaderBoard() throws InterruptedException{
+        Thread.sleep(2000);
         click(leaderBoard);
     }
 
