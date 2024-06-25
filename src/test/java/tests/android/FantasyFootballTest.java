@@ -43,7 +43,8 @@ public class FantasyFootballTest extends BaseTest {
     public void clickOnLeaderboard() {
         fantasyFootball.clickLeaderBoardIcon();
         try {
-            Assert.assertEquals(fantasyFootball.getCurrentWeekRankingText(), "Weekly leaderboard ranking are not final yet.");
+            System.out.println(fantasyFootball.getCurrentWeekRankingText());
+            Assert.assertEquals(fantasyFootball.getCurrentWeekRankingText(), "Weekly leaderboard rankings are not final yet.");
         } catch (AssertionError e) {
             throw e;
         }
@@ -55,6 +56,7 @@ public class FantasyFootballTest extends BaseTest {
     public void clickOnPastWeek() {
         fantasyFootball.clickPastWeek();
         try {
+            System.out.println(fantasyFootball.getPastWeekRankingText());
             Assert.assertEquals(fantasyFootball.getPastWeekRankingText(), "Weekly leaderboard rankings are final.");
         } catch (AssertionError e) {
             throw e;

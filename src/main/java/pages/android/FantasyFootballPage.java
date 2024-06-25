@@ -22,9 +22,9 @@ public class FantasyFootballPage extends BasePage {
     //fluent wait
     private static final By myMachesIcon = AppiumBy.xpath("//android.view.View[@content-desc=\"My Matches\"]");
     private static final By leaderboardIcon = AppiumBy.xpath("//android.view.View[@content-desc=\"Leaderboard\"]");
-    private static final By currentWeekRankingText = AppiumBy.xpath("//android.widget.TextView[@text=\"Weekly leaderboard rankings are final.\"]");
+    private static final By currentWeekRankingText = AppiumBy.xpath("//android.widget.TextView[@text=\"Weekly leaderboard rankings are not final yet.\"]");
     private static final By pastWeek = AppiumBy.xpath("//android.view.View[@content-desc=\"pastweek\"]");
-   private static final By pastWeekRankingText = AppiumBy.xpath("//android.widget.TextView[@text=\"Weekly leaderboard rankings are not final yet.\"]");
+   private static final By pastWeekRankingText = AppiumBy.xpath("//android.widget.TextView[@text=\"Weekly leaderboard rankings are final.\"]");
     //scroll to bottom
     private static final By scrollToTop = AppiumBy.xpath("//android.webkit.WebView[@text=\"Bhoos Fantasy\"]/android.view.View/android.widget.Button");
     private static final By nextWeek = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]");
@@ -76,6 +76,7 @@ public class FantasyFootballPage extends BasePage {
     public void clickLeaderBoardIcon() {
         click(leaderboardIcon);
     }
+
     public String getCurrentWeekRankingText() {
         return getText(currentWeekRankingText);
     }
@@ -90,7 +91,7 @@ public class FantasyFootballPage extends BasePage {
     }
 
     public void clickScrollToTop() {
-        fluentWait(FantasyFootballPage.nextWeek, 1000, 1);
+        fluentWait(FantasyFootballPage.nextWeek, 10000, 1);
         click(scrollToTop);
     }
 
