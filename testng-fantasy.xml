@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite"><test verbose="2" preserve-order="true" name="D:/bhoos/Internship-Demo">
+    <classes>
+        <class name="tests.android.WelcomePageTest">
+            <methods>
+                <include name="verifyActionForWelcomePage"/>
+            </methods>
+        </class>
+        <class name="tests.android.JutPattiSinglePlayerGamePageTest">
+            <methods>
+                <include name="setWelcomeScreen"/>
+                <include name="verifyActionForJutPattiSinglePlayerGame"/>
+            </methods>
+        </class>
+
+        <class name="tests.android.StacksSinglePlayerGamePageTest">
+            <methods>
+                <include name="setWelcomeScreen"/>
+                <include name="verifyActionForStacksSinglePlayerGame"/>
+            </methods>
+        </class>
+        <class name="tests.android.KittiSinglePlayerGamePageTest">
+            <methods>
+                <include name="setWelcomeScreen"/>
+                <include name="verifyActionForKittiSinglePlayerGame"/>
+            </methods>
+        </class>
+        <class name="tests.android.FantasyCricketPageTest">
+            <methods>
+                <include name="setWelcomeScreen"/>
+                <include name="fantasyIconAndSignInWithGoogle"/>
+                <include name="myMatchesAction"/>
+                <include name="myMatchesText1"/>
+                <include name="myMatchesText2"/>
+                <include name="leaderboardAction"/>
+                <include name="leaderboardText1"/>
+                <include name="leaderboardText2"/>
+                <include name="exitAppAction"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+</suite>
