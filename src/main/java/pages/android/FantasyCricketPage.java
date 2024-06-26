@@ -4,6 +4,7 @@ import Base.BasePage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import utils.Util;
 
 public class FantasyCricketPage extends BasePage {
 
@@ -15,9 +16,9 @@ public class FantasyCricketPage extends BasePage {
     private static final By myMatches = AppiumBy.xpath("//android.view.View[@content-desc=\"My Matches\"]");
     //Assertion for My matches page text
     private static final By myMatchesText1 = AppiumBy.xpath("//android.widget.TextView[@text=\"Whoops! You haven't joined any cricket matches\"]");
-    private static final By myMatchesText2 = AppiumBy.xpath("////android.widget.TextView[@text=\"Try joining a new match in the explore page.\"]");
+    private static final By myMatchesText2 = AppiumBy.xpath("//android.widget.TextView[@text=\"Try joining a new match in the explore page.\"]");
     private static final By joinAMatchBtn = AppiumBy.xpath("//android.widget.Button[@text=\"JOIN A MATCH\"]");
-    private static final By leaderBoard = AppiumBy.xpath("//android.view.View[@content-desc=\"Leaderboard\"]/android.view.View");
+    private static final By leaderBoardMenu = AppiumBy.xpath("//android.view.View[@content-desc=\"Leaderboard\"]");
     private static final By pastWeekLeftArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"pastweek\"]/android.widget.Image");
     private static final By currentWeekRightArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]/android.widget.Image");
     private static final By nextWeekRightArrow = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]/android.widget.Image");
@@ -64,16 +65,17 @@ public class FantasyCricketPage extends BasePage {
         return getText(myMatchesText1);
     }
 
-//    public String getMyMatchesText2(){
-//        return getText(myMatchesText2);
-//    }
+    public String getMyMatchesText2(){
+        return getText(myMatchesText2);
+    }
 
     public void clickJoinAMatchBtn(){
         click(joinAMatchBtn);
     }
+
     public void clickLeaderBoard() throws InterruptedException{
-        Thread.sleep(2000);
-        click(leaderBoard);
+        Thread.sleep(1000);
+        click(leaderBoardMenu);
     }
 
     public void clickPastWeekLeftArrow() {
