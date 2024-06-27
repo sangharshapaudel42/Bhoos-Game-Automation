@@ -26,7 +26,7 @@ public class FantasyFootballPage extends BasePage {
     private static final By pastWeek = AppiumBy.xpath("//android.view.View[@content-desc=\"pastweek\"]");
    private static final By pastWeekRankingText = AppiumBy.xpath("//android.widget.TextView[@text=\"Weekly leaderboard rankings are final.\"]");
     //scroll to bottom
-    private static final By scrollToTop = AppiumBy.xpath("//android.webkit.WebView[@text=\"Bhoos Fantasy\"]/android.view.View/android.widget.Button");
+    private static final By scrollToTop = AppiumBy.className("android.widget.Button");
     private static final By nextWeek = AppiumBy.xpath("//android.view.View[@content-desc=\"nextweek\"]");
     //assertion
     private static final By exitButton = AppiumBy.xpath("//android.widget.Button[@text=\"svg%3e\"]");
@@ -48,7 +48,7 @@ public class FantasyFootballPage extends BasePage {
 
 
     public void clickChooseAccount() {
-        fluentWait(chooseAccount, 10, 1);
+        fluentWait(chooseAccount, 10000, 1);
         click(chooseAccount);
     }
 

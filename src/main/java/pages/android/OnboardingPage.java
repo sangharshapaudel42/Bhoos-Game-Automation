@@ -32,7 +32,7 @@ public class OnboardingPage extends BasePage {
     }
 
     public void clickTapHereToSkipButton() {
-
+            util.fluentWait(tapHereToSkipButton, 10000, 1);
         click(tapHereToSkipButton);
     }
 }
