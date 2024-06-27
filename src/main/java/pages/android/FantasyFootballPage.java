@@ -48,23 +48,23 @@ public class FantasyFootballPage extends BasePage {
 
 
     public void clickChooseAccount() {
-        fluentWait(FantasyFootballPage.chooseAccount, 10, 1);
+        fluentWait(chooseAccount, 10, 1);
         click(chooseAccount);
     }
 
     public void clickStartPlaying() {
-        fluentWait(FantasyFootballPage.startPlaying, 10000, 1);
+        fluentWait(startPlaying, 10000, 1);
         click(startPlaying);
     }
 
     public void clickAllowNotificatonbutton() {
-        fluentWait(FantasyFootballPage.allowNotificatonButton, 1000, 1);
+        fluentWait(allowNotificatonButton, 1000, 1);
 
         click(allowNotificatonButton);
     }
 
     public void clickFootballIcon() {
-        fluentWait(FantasyFootballPage.footballIcon, 2000000, 1);
+        fluentWait(footballIcon, 2000000, 1);
 
         click(footballIcon);
     }
@@ -82,21 +82,21 @@ public class FantasyFootballPage extends BasePage {
     }
 
     public void clickPastWeek() {
-        fluentWait(FantasyFootballPage.pastWeek, 10000, 1);
+        fluentWait(pastWeek, 10000, 1);
         click(pastWeek);
     }
     public String getPastWeekRankingText() {
-        fluentWait(FantasyFootballPage.pastWeekRankingText, 10000, 1);
+        fluentWait(pastWeekRankingText, 10000, 1);
         return getText(pastWeekRankingText);
     }
 
     public void clickScrollToTop() {
-        fluentWait(FantasyFootballPage.nextWeek, 10000, 1);
+        fluentWait(nextWeek, 10000, 1);
         click(scrollToTop);
     }
 
     public void clickNextWeek() {
-       util.clickMultipleTimes(FantasyFootballPage.nextWeek, 2);
+       util.clickMultipleTimes(nextWeek, 2);
     }
 
     public String getStayTunedText() {

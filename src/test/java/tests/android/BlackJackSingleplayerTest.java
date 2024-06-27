@@ -5,34 +5,27 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.android.BlackJackSingleplayerPage;
 import pages.android.OnboardingPage;
-import utils.Util;
 
 public class BlackJackSingleplayerTest extends BaseTest {
-    BlackJackSingleplayerPage blackJack;
-    Util util;
+    BlackJackSingleplayerPage blackJackSingleplayer;
     OnboardingPage onboarding;
 
     @BeforeClass
     public void setUp() {
         onboarding = new OnboardingPage(driver);
-        blackJack = new BlackJackSingleplayerPage(driver);
-        util = new Util(driver);
+        blackJackSingleplayer = new BlackJackSingleplayerPage(driver);
+
 
     }
 
-    @Test(description = "onboarding")
-    public void onboarding() {
-        onboarding.clickSkipButton();
-        onboarding.clickPlayAsGuestButton();
-        onboarding.clickTapHereToSkipButton();
-    }
 
     @Test(description = "Start playing and complete playing")
     public void startPlayingAndCompletePlaying() {
-        blackJack.clickBlackjackButton();
-        blackJack.clickSingleplayerButton();
-        blackJack.clickMaxButton();
-        blackJack.clickBetButton();
+        onboarding.clickTapHereToSkipButton();
+        blackJackSingleplayer.clickBlackjackButton();
+        blackJackSingleplayer.clickSingleplayerButton();
+        blackJackSingleplayer.clickMaxButton();
+        blackJackSingleplayer.clickBetButton();
     }
 
 

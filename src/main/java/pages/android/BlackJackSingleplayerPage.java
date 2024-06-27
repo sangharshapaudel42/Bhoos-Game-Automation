@@ -6,12 +6,12 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
 public class BlackJackSingleplayerPage extends BasePage {
-    private static final By blackjackIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"game-tile-blackjack-test-id\"]/android.widget.ImageView");
-    private static final By singleplayerButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Single Player, Level up your skills\"]/android.view.ViewGroup[2]");
-    private static final By hamburgerButton = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"in-game-hamburger-id\"]/android.widget.ImageView");
+    private static final By blackjackIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"game-tile-blackjack-test-id\"]");
+    private static final By singleplayerButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Single Player, Level up your skills\"]");
+    private static final By hamburgerButton = AppiumBy.xpath("onboarding.clickTapHereToSkipButton();");
     private static final By startNewGameButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[116]");
-    private static final By maxButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"MAX\"]/android.view.ViewGroup");
-    private static final By betbutton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[111]/android.view.ViewGroup/android.widget.ImageView");
+    private static final By maxBetButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[120]");
+    private static final By betbutton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[111]");
     //implicitwait needed or explicit wait unitl play again button
     private static final By playAgainButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"PLAY AGAIN\"]");
     private static final By changeBotsButton = AppiumBy.xpath("//android.widget.TextView[@text=\"Change Bots\"]");
@@ -49,7 +49,7 @@ public class BlackJackSingleplayerPage extends BasePage {
 
     public void clickMaxButton() {
 
-        click(maxButton);
+        click(maxBetButton);
     }
 
     public void clickBetButton() {
@@ -58,7 +58,7 @@ public class BlackJackSingleplayerPage extends BasePage {
     }
 
     public void clickPlayAgainButton() {
-
+        fluentWait(playAgainButton,10000,1);
         click(playAgainButton);
     }
 
