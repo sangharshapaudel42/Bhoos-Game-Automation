@@ -4,14 +4,16 @@ import Base.BasePage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import utils.Util;
 
 public class PokerMultiplayerPage extends BasePage {
+
     private static final By pokerIcon = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"game-tile-poker-test-id\"]");
     private static final By multiplayerButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Multiplayer, Face-off real players\"]");
     private static final By pokerTable = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Buy-in, 1000, Stakes, 0\"]");
     private static final By backButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup");
     private static final By leavegameButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Leave Game\"]");
-    private static final By hamburgerButton = AppiumBy.xpath("//android.view.ViewGroup[@resource-id='in-game-hamburger-id']");
+    private static final By hamburgerButton = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"in-game-hamburger-id\"]");
     private static final By settingButton = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"settings-test-id\"]");
     private static final By reportProblemButton = AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"report-problem-test-id\"]");
     //random click on the screen
@@ -23,6 +25,7 @@ public class PokerMultiplayerPage extends BasePage {
     //scroll 1 time
     private static final By closeButton = AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[62]");
 
+    private final Util util = new Util(driver);
     public PokerMultiplayerPage(AppiumDriver driver) {
         super(driver);
     }
@@ -43,7 +46,7 @@ public class PokerMultiplayerPage extends BasePage {
         click(leavegameButton);
     }
     public void clickHamburgerButton() {
-        fluentWait(hamburgerButton, 10000, 1);
+        fluentWait(hamburgerButton, 100000, 1);
         click(hamburgerButton);
     }
     public void clickSettingButton() {
@@ -57,10 +60,11 @@ public class PokerMultiplayerPage extends BasePage {
     }
     public void clickSoundButton() {
 
-        click(soundButton);
+        util.clickMultipleTimes(soundButton,2);
     }
     public void clickVibrationButton() {
-        click(vibrationButton);
+
+        util.clickMultipleTimes(vibrationButton,2);
     }
     public void clickCloseButton() {
         click(closeButton);
