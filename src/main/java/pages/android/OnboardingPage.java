@@ -20,8 +20,7 @@ public class OnboardingPage extends BasePage {
 
 
     public void clickSkipButton() {
-
-        util.fluentWait(OnboardingPage.skipButton, 10000, 1);
+        fluentWait(OnboardingPage.skipButton, 10000, 1);
 
         click(skipButton);
     }
@@ -32,7 +31,7 @@ public class OnboardingPage extends BasePage {
     }
 
     public void clickTapHereToSkipButton() {
-            util.fluentWait(tapHereToSkipButton, 10000, 1);
+        fluentWait(tapHereToSkipButton, 10000, 1);
         click(tapHereToSkipButton);
     }
 }
