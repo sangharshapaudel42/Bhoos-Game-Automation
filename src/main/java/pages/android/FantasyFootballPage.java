@@ -59,7 +59,6 @@ public class FantasyFootballPage extends BasePage {
 
     public void clickAllowNotificatonbutton() {
         fluentWait(allowNotificatonButton, 1000, 1);
-
         click(allowNotificatonButton);
     }
 

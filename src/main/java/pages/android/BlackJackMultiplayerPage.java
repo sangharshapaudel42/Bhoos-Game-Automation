@@ -13,7 +13,6 @@ public class BlackJackMultiplayerPage extends BasePage {
 
 
 
-
     public BlackJackMultiplayerPage(AppiumDriver driver) {
         super(driver);
     }
