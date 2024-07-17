@@ -1,23 +1,25 @@
 package utils;
 
+import Base.BasePage;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
-
 import java.time.Duration;
 import java.util.Collections;
 
-public class Gestures extends EnumDirection{
+public class Gestures extends BasePage {
+
     public Gestures(AppiumDriver driver) {
         super(driver);
     }
+
     //swipe method using above enum
-    public void scroll( direction direction){
+    public void scroll( Directions dir){
         Dimension dimension = driver.manage().window().getSize();
         int startX = dimension.width / 2;
         int startY, endY;
-        switch (direction) {
+        switch (dir) {
             case UP:
                 startY = (int) (dimension.height * 0.2);
                 endY = (int) (dimension.height * 0.8);

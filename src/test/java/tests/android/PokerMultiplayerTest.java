@@ -5,7 +5,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.android.OnboardingPage;
 import pages.android.PokerMultiplayerPage;
-import utils.EnumDirection;
+import utils.Directions;
+import utils.Gestures;
 import utils.Util;
 
 public class PokerMultiplayerTest extends BaseTest {
@@ -47,8 +48,7 @@ public class PokerMultiplayerTest extends BaseTest {
     public void backButtonActions() {
         pokerMultiplayer.clickBackButton();
         pokerMultiplayer.clickLeaveGameButton();
-        EnumDirection.direction down = EnumDirection.direction.DOWN;
-
+        Directions up = Directions.UP;
     }
 
 
